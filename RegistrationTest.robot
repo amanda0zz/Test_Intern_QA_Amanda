@@ -2,17 +2,18 @@
 
 Library    SeleniumLibrary
 
+
 *** Test Cases ***
 
 Valid Register Test
     Open Browser    https://thermos.com/account/register    Chrome
     Input Text    id=FirstName    Amanda Amelia
-    Input Text    id=Email    AmandaAmeliaaaaaa16a@gmail.com
+    Input Text    id=Email    AmandaAmeliaaaa627@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda123456
     Input Text    name=customer[password_confirmation]    Amanda123456
-    Click Button  xpath=//button[text()='CREATE AN ACCOUNT']
-    Element Should Be Visible  id=MainContent
+    Scroll Element Into View  css:.btn-gray.btn-full
+   
 
 Invalid Register Leaves all field blank
     Open Browser    https://thermos.com/account/register    Chrome
@@ -25,7 +26,7 @@ Invalid Register fill in all columns with valid data but leave names blank
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  xpath=//button[text()='CREATE AN ACCOUNT']
+    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors  
 
 Invalid Register fill in all columns with valid data but leave email blank
@@ -191,7 +192,7 @@ Invalid Register fill in all columns with valid data but password and password c
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amelia9876
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
+    Press Keys  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
     
