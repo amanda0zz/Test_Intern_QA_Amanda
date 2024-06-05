@@ -7,11 +7,11 @@ Library    SeleniumLibrary
 Valid Register Test
     Open Browser    https://thermos.com/account/register    Chrome
     Input Text    id=FirstName    Amanda Amelia
-    Input Text    id=Email    AmandaAmelia@gmail.com
+    Input Text    id=Email    AmandaAmeliaaaaaa16a@gmail.com
     Input Text    id=Phone    089726384763
-    Input Text    id=CreatePassword    Amanda12345
-    Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
+    Input Text    id=CreatePassword    Amanda123456
+    Input Text    name=customer[password_confirmation]    Amanda123456
+    Click Button  xpath=//button[text()='CREATE AN ACCOUNT']
     Element Should Be Visible  id=MainContent
 
 Invalid Register Leaves all field blank
@@ -25,8 +25,7 @@ Invalid Register fill in all columns with valid data but leave names blank
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
+    Click Button  xpath=//button[text()='CREATE AN ACCOUNT']
     Element Should Be Visible  css=.errors  
 
 Invalid Register fill in all columns with valid data but leave email blank
@@ -35,7 +34,6 @@ Invalid Register fill in all columns with valid data but leave email blank
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors  
 
@@ -46,7 +44,6 @@ Invalid Register fill in all columns with valid data but leave phone blank
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors
 
 Invalid Register fill in all columns with valid data but leave password blank
@@ -56,7 +53,6 @@ Invalid Register fill in all columns with valid data but leave password blank
     Input Text    id=Phone    089726384763
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors  
 
 Invalid Register fill in all columns with valid data but leave password confirmation blank
@@ -65,7 +61,6 @@ Invalid Register fill in all columns with valid data but leave password confirma
     Input Text    id=Email    AmandaAmelia@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
@@ -77,7 +72,6 @@ Invalid Register fill in all columns with valid data but email has no @
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but email has no domain
@@ -87,7 +81,6 @@ Invalid Register fill in all columns with valid data but email has no domain
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
@@ -99,7 +92,6 @@ Invalid Register fill in all columns with valid data but email has no username
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but email has space between username and domain
@@ -109,7 +101,6 @@ Invalid Register fill in all columns with valid data but email has space between
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors
 
@@ -121,7 +112,6 @@ Invalid Register fill in all columns with valid data but email has special chara
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but phone number is a text
@@ -131,7 +121,6 @@ Invalid Register fill in all columns with valid data but phone number is a text
     Input Text    id=Phone    testnumberwithtext
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors  
 
@@ -143,7 +132,6 @@ Invalid Register fill in all columns with valid data but phone number contain sp
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but password than 8 character
@@ -153,7 +141,6 @@ Invalid Register fill in all columns with valid data but password than 8 charact
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    aman
     Input Text    name=customer[password_confirmation]    aman
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
@@ -165,7 +152,6 @@ Invalid Register fill in all columns with valid data but password missing number
     Input Text    id=CreatePassword    Amandaaaa
     Input Text    name=customer[password_confirmation]    Amandaaaa
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but password capital letter
@@ -175,7 +161,6 @@ Invalid Register fill in all columns with valid data but password capital letter
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    amanda12345
     Input Text    name=customer[password_confirmation]    amandaa12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
@@ -187,7 +172,6 @@ Invalid Register fill in all columns with valid data but password missing number
     Input Text    id=CreatePassword    amandaamelia
     Input Text    name=customer[password_confirmation]    amandaamelia
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but password has a space
@@ -198,7 +182,6 @@ Invalid Register fill in all columns with valid data but password has a space
     Input Text    id=CreatePassword    Amanda 12345
     Input Text    name=customer[password_confirmation]    Amanda12345
     Click Button  css:.btn-gray.btn-full
-    Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
 Invalid Register fill in all columns with valid data but password and password confirmation is missmatch
@@ -208,7 +191,6 @@ Invalid Register fill in all columns with valid data but password and password c
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amelia9876
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
     Click Button  css:.btn-gray.btn-full
     Element Should Be Visible  css=.errors 
 
