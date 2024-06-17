@@ -1,79 +1,134 @@
 *** Settings ***
-
 Library    SeleniumLibrary
+
+*** Variables ***
+${REGISTER_URL}   https://thermos.com/account/register
+${BROWSER}        Chrome
+${COOKIE_BANNER}  css:.osano-cm-window__dialog .osano-cm-dialog__close
+${REGISTER_BUTTON}    css:.btn-gray.btn-full
+${HOME_URL}       https://thermos.com/
+${ERROR_MESSAGE}  css:.errors
+
+*** Keywords ***
+Handle Cookie Banner
+    [Documentation]    Menangani banner cookie jika ada
+    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${COOKIE_BANNER}    timeout=5s
+    ${banner_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${COOKIE_BANNER}
+    IF    ${banner_visible}
+        Click Button    ${COOKIE_BANNER}
+        Sleep    1s
+    END
+
+Handle Alert If Present
+    [Documentation]    Menangani alert jika ada
+    ${result}=    Run Keyword And Ignore Error    Alert Should Be Present    timeout=10s
+    ${alert_present}=    Set Variable    ${result}[0]
+    Run Keyword If    '${alert_present}' == 'PASS'    Handle Alert    ACCEPT
+
+Verify Error Message Displayed
+    [Documentation]    Memverifikasi bahwa pesan error ditampilkan
+    ${error_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${ERROR_MESSAGE}
+    Run Keyword If    '${error_visible}' == 'PASS'    Log    Error message is displayed
+    Should Be True    ${error_visible}    Error message is not displayed
+
 
 
 *** Test Cases ***
-
 Valid Register Test
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
-    Input Text    id=Email    AmandaAmeliaaaa627@gmail.com
+    Input Text    id=Email    AmandaAmeliaaa60x7@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda123456
     Input Text    name=customer[password_confirmation]    Amanda123456
-    Scroll Element Into View  css:.btn-gray.btn-full
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Wait Until Location Is    ${HOME_URL}    timeout=10s
+    Location Should Be    ${HOME_URL}
    
 
 Invalid Register Leaves all field blank
-    Open Browser    https://thermos.com/account/register    Chrome
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Wait Until Element Is Visible    ${ERROR_MESSAGE}    timeout=10s
+    Element Should Be Visible    ${ERROR_MESSAGE}
+
 
 Invalid Register fill in all columns with valid data but leave names blank
-    Open Browser    https://thermos.com/account/register    Chrome
-    Input Text    id=Email    AmandaAmelia@gmail.com
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
+    Input Text    id=Email    AmandaAmelihshsa@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors  
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Wait Until Element Is Visible    ${ERROR_MESSAGE}    timeout=10s
+    Element Should Be Visible    ${ERROR_MESSAGE}  
 
 Invalid Register fill in all columns with valid data but leave email blank
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors  
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Wait Until Element Is Visible    ${ERROR_MESSAGE}    timeout=10s
+    Element Should Be Visible    ${ERROR_MESSAGE}  
 
 Invalid Register fill in all columns with valid data but leave phone blank
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
-    Input Text    id=Email    AmandaAmelia@gmail.com
+    Input Text    id=Email    AmandaAmelia826@gmail.com
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Wait Until Element Is Visible    ${ERROR_MESSAGE}    timeout=10s
+    Element Should Be Visible    ${ERROR_MESSAGE}errors
 
 Invalid Register fill in all columns with valid data but leave password blank
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
-    Input Text    id=Email    AmandaAmelia@gmail.com
+    Input Text    id=Email    AmandaAmeliavs48@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors  
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Handle Alert If Present
+    Location Should Be    ${REGISTER_URL}
+  
 
 Invalid Register fill in all columns with valid data but leave password confirmation blank
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
     Input Text    id=Email    AmandaAmelia@gmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors 
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON}
+    Handle Alert If Present
+    Location Should Be    ${REGISTER_URL} 
 
 Invalid Register fill in all columns with valid data but email has no @
-    Open Browser    https://thermos.com/account/register    Chrome
+    Open Browser    ${REGISTER_URL}    ${BROWSER}
     Input Text    id=FirstName    Amanda Amelia
     Input Text    id=Email    AmandaAmeliagmail.com
     Input Text    id=Phone    089726384763
     Input Text    id=CreatePassword    Amanda12345
     Input Text    name=customer[password_confirmation]    Amanda12345
-    Click Button  css:.btn-gray.btn-full
-    Element Should Be Visible  css=.errors 
+    Handle Cookie Banner
+    Scroll Element Into View  ${REGISTER_BUTTON}
+    Click Button    ${REGISTER_BUTTON} 
+    Location Should Be    ${REGISTER_URL}
 
 Invalid Register fill in all columns with valid data but email has no domain
     Open Browser    https://thermos.com/account/register    Chrome
