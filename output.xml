@@ -1,127 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.10.11 on win32)" generated="2024-06-17T20:14:03.771466" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.10.11 on win32)" generated="2024-06-18T09:06:49.723402" rpa="false" schemaversion="5">
 <suite id="s1" name="RegistrationTest" source="c:\Users\User\Documents\GitHub\Test_Intern_QA_Amanda\RegistrationTest.robot">
-<test id="s1-t1" name="Invalid Register fill in all columns with valid data but email has no @" line="121">
+<test id="s1-t1" name="Invalid Register fill in all columns with valid data but phone number is a text" line="153">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:04.141506" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<msg time="2024-06-18T09:06:50.131646" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
 <arg>${REGISTER_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-17T20:14:04.141506" elapsed="9.143318"/>
+<status status="PASS" start="2024-06-18T09:06:50.131646" elapsed="7.762432"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:13.284824" level="INFO">Typing text 'Amanda Amelia' into text field 'id=FirstName'.</msg>
+<msg time="2024-06-18T09:06:57.902088" level="INFO">Typing text 'Amanda Amelia' into text field 'id=FirstName'.</msg>
 <arg>id=FirstName</arg>
 <arg>Amanda Amelia</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:13.284824" elapsed="0.410797"/>
+<status status="PASS" start="2024-06-18T09:06:57.894078" elapsed="0.371794"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:13.698639" level="INFO">Typing text 'AmandaAmeliagmail.com' into text field 'id=Email'.</msg>
+<msg time="2024-06-18T09:06:58.265872" level="INFO">Typing text 'AmanadaAmeliaahgsy@gmail.com' into text field 'id=Email'.</msg>
 <arg>id=Email</arg>
-<arg>AmandaAmeliagmail.com</arg>
+<arg>AmanadaAmeliaahgsy@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:13.695621" elapsed="0.405634"/>
+<status status="PASS" start="2024-06-18T09:06:58.265872" elapsed="0.404316"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:14.101255" level="INFO">Typing text '089726384763' into text field 'id=Phone'.</msg>
+<msg time="2024-06-18T09:06:58.672394" level="INFO">Typing text 'testnumberwithtex' into text field 'id=Phone'.</msg>
 <arg>id=Phone</arg>
-<arg>089726384763</arg>
+<arg>testnumberwithtex</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.101255" elapsed="0.232524"/>
+<status status="PASS" start="2024-06-18T09:06:58.671243" elapsed="0.284419"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:14.334679" level="INFO">Typing text 'Amanda12345' into text field 'id=CreatePassword'.</msg>
+<msg time="2024-06-18T09:06:58.955662" level="INFO">Typing text 'Amanda12345' into text field 'id=CreatePassword'.</msg>
 <arg>id=CreatePassword</arg>
 <arg>Amanda12345</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.334679" elapsed="0.239197"/>
+<status status="PASS" start="2024-06-18T09:06:58.955662" elapsed="0.660770"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:14.573876" level="INFO">Typing text 'Amanda12345' into text field 'name=customer[password_confirmation]'.</msg>
+<msg time="2024-06-18T09:06:59.616432" level="INFO">Typing text 'Amanda12345' into text field 'name=customer[password_confirmation]'.</msg>
 <arg>name=customer[password_confirmation]</arg>
 <arg>Amanda12345</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.573876" elapsed="0.232554"/>
+<status status="PASS" start="2024-06-18T09:06:59.616432" elapsed="0.323325"/>
 </kw>
+<kw name="Click on Register Button">
 <kw name="Handle Cookie Banner">
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${COOKIE_BANNER}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.807489" elapsed="0.039647"/>
+<status status="PASS" start="2024-06-18T09:06:59.939757" elapsed="0.040399"/>
 </kw>
 <arg>Wait Until Element Is Visible</arg>
 <arg>${COOKIE_BANNER}</arg>
 <arg>timeout=5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.807489" elapsed="0.039647"/>
+<status status="PASS" start="2024-06-18T09:06:59.939757" elapsed="0.040399"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:14.901280" level="INFO">Element 'css:.osano-cm-window__dialog .osano-cm-dialog__close' is displayed.</msg>
+<msg time="2024-06-18T09:07:00.059987" level="INFO">Element 'css:.osano-cm-window__dialog .osano-cm-dialog__close' is displayed.</msg>
 <arg>${COOKIE_BANNER}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.847136" elapsed="0.054144"/>
+<status status="PASS" start="2024-06-18T09:06:59.980156" elapsed="0.079831"/>
 </kw>
-<msg time="2024-06-17T20:14:14.901280" level="INFO">${banner_visible} = True</msg>
+<msg time="2024-06-18T09:07:00.059987" level="INFO">${banner_visible} = True</msg>
 <var>${banner_visible}</var>
 <arg>Element Should Be Visible</arg>
 <arg>${COOKIE_BANNER}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.847136" elapsed="0.054144"/>
+<status status="PASS" start="2024-06-18T09:06:59.980156" elapsed="0.079831"/>
 </kw>
 <if>
 <branch type="IF" condition="${banner_visible}">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:14.901280" level="INFO">Clicking button 'css:.osano-cm-window__dialog .osano-cm-dialog__close'.</msg>
+<msg time="2024-06-18T09:07:00.059987" level="INFO">Clicking button 'css:.osano-cm-window__dialog .osano-cm-dialog__close'.</msg>
 <arg>${COOKIE_BANNER}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:14.901280" elapsed="0.149039"/>
+<status status="PASS" start="2024-06-18T09:07:00.059987" elapsed="0.154470"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-06-17T20:14:16.062517" level="INFO">Slept 1 second.</msg>
+<msg time="2024-06-18T09:07:01.225418" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-06-17T20:14:15.050319" elapsed="1.012198"/>
+<status status="PASS" start="2024-06-18T09:07:00.214457" elapsed="1.011841"/>
 </kw>
-<status status="PASS" start="2024-06-17T20:14:14.901280" elapsed="1.161237"/>
+<status status="PASS" start="2024-06-18T09:07:00.059987" elapsed="1.166311"/>
 </branch>
-<status status="PASS" start="2024-06-17T20:14:14.901280" elapsed="1.161237"/>
+<status status="PASS" start="2024-06-18T09:07:00.059987" elapsed="1.166311"/>
 </if>
 <doc>Menangani banner cookie jika ada</doc>
-<status status="PASS" start="2024-06-17T20:14:14.807489" elapsed="1.255028"/>
+<status status="PASS" start="2024-06-18T09:06:59.939757" elapsed="1.286541"/>
 </kw>
 <kw name="Scroll Element Into View" owner="SeleniumLibrary">
 <arg>${REGISTER_BUTTON}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2024-06-17T20:14:16.062517" elapsed="0.339871"/>
+<status status="PASS" start="2024-06-18T09:07:01.226298" elapsed="0.369903"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:16.419145" level="INFO">Clicking button 'css:.btn-gray.btn-full'.</msg>
+<msg time="2024-06-18T09:07:01.606056" level="INFO">Clicking button 'css:.btn-gray.btn-full'.</msg>
 <arg>${REGISTER_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-17T20:14:16.402388" elapsed="0.865986"/>
+<status status="PASS" start="2024-06-18T09:07:01.604223" elapsed="4.991070"/>
+</kw>
+<doc>Klik button register</doc>
+<status status="PASS" start="2024-06-18T09:06:59.939757" elapsed="6.655536"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-06-17T20:14:17.285089" level="INFO">Current location is 'https://thermos.com/account/register'.</msg>
+<msg time="2024-06-18T09:07:06.830372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-59.png"&gt;&lt;img src="selenium-screenshot-59.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-06-18T09:07:06.830372" level="FAIL">Location should have been 'https://thermos.com/account/register' but was 'https://thermos.com/'.</msg>
 <arg>${REGISTER_URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-06-17T20:14:17.271268" elapsed="0.013821"/>
+<status status="FAIL" start="2024-06-18T09:07:06.605417" elapsed="0.233432">Location should have been 'https://thermos.com/account/register' but was 'https://thermos.com/'.</status>
 </kw>
-<status status="PASS" start="2024-06-17T20:14:04.131233" elapsed="13.153856"/>
+<status status="FAIL" start="2024-06-18T09:06:50.124128" elapsed="16.714721">Location should have been 'https://thermos.com/account/register' but was 'https://thermos.com/'.</status>
 </test>
-<status status="PASS" start="2024-06-17T20:14:03.771466" elapsed="13.527142"/>
+<status status="FAIL" start="2024-06-18T09:06:49.730437" elapsed="17.112998"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="RegistrationTest">RegistrationTest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="RegistrationTest">RegistrationTest</stat>
 </suite>
 </statistics>
 <errors>
